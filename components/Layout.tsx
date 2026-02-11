@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '@/src/assets/images/nuevosegurbaniconwebnobk.png';
+import logo from './assets/nuevosegurbaniconwebnobk.png';
 
 interface LayoutProps {
   children: React.ReactNode;
