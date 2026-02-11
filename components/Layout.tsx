@@ -50,7 +50,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
             {/* Logo Image Direct Render */}
             <div className="w-12 h-12 relative flex items-center justify-center">
               <img 
-                src="nuevosegurbaniconwebnobk.png" 
+                src="/nuevosegurbaniconwebnobk.png" 
                 alt="SegUrban Logo" 
                 className="w-full h-full object-contain"
               />
@@ -106,7 +106,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
               <div className="flex items-center gap-2">
                  <div className="w-8 h-8 relative">
                     <img 
-                      src="nuevosegurbaniconwebnobk.png" 
+                      src="/nuevosegurbaniconwebnobk.png" 
                       alt="SegUrban Logo" 
                       className="w-full h-full object-contain"
                     />
