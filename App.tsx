@@ -5,7 +5,7 @@ import {
   Shield, Smartphone, CreditCard, Users, CheckCircle, ArrowRight, 
   Lock, Activity, ChevronRight, Play, Star, Mail, Phone, Building,
   Server, Database, Globe, Zap, BarChart3, ScanLine, Cpu, Network, Wifi,
-  Layers, Radio, Cloud, PieChart, Tablet, BookOpen, Award, Headphones, FileText
+  Layers, Radio, Cloud, PieChart, Tablet, BookOpen, Award, Headphones, FileText, Loader2
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Card } from './components/ui/Card';
@@ -177,9 +177,16 @@ const App: React.FC = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showDemoModal, setShowDemoModal] = useState(false);
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(false);
   const [activeFeatureId, setActiveFeatureId] = useState<string | null>(null);
 
   const activeFeature = activeFeatureId ? featureDetails[activeFeatureId] : null;
+
+  // Reset video loading state when modal closes
+  const handleCloseVideoModal = () => {
+    setShowVideoModal(false);
+    setIsVideoLoading(false);
+  };
 
   return (
     <Layout 
@@ -821,12 +828,19 @@ const App: React.FC = () => {
       </Modal>
 
       {/* Video Demo Modal */}
-      <Modal isOpen={showVideoModal} onClose={() => setShowVideoModal(false)} title="Arquitectura del Sistema" maxWidth="max-w-4xl">
+      <Modal isOpen={showVideoModal} onClose={handleCloseVideoModal} title="Arquitectura del Sistema" maxWidth="max-w-4xl">
          <div className="aspect-video bg-black rounded-lg overflow-hidden relative group">
             {/* Placeholder for Video - In a real app, embed YouTube/Vimeo here */}
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/50 group-hover:bg-slate-900/40 transition-colors">
-               <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:scale-110 transition-transform cursor-pointer shadow-2xl">
-                  <Play size={40} fill="white" className="text-white ml-2" />
+               <div 
+                 onClick={() => setIsVideoLoading(true)}
+                 className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:scale-110 transition-transform cursor-pointer shadow-2xl"
+               >
+                  {isVideoLoading ? (
+                    <Loader2 size={40} className="text-white animate-spin" />
+                  ) : (
+                    <Play size={40} fill="white" className="text-white ml-2" />
+                  )}
                </div>
             </div>
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" alt="Video Cover" className="w-full h-full object-cover opacity-50 -z-10" />
