@@ -104,11 +104,13 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
           >
             <div className="flex justify-between items-center mb-10">
               <div className="flex items-center gap-2">
-                 <div className="w-8 h-8 relative">
+                 <div className="w-8 h-8 min-w-[2rem] min-h-[2rem] relative shrink-0">
                     <img 
-                      src={logo}
+                      src="/logo.png" 
                       alt="SegUrban Logo" 
-                      className="w-full h-full object-contain"
+                      width="32"
+                      height="32"
+                      className="w-full h-full object-contain block"
                     />
                  </div>
                  <span className="text-xl font-bold text-white">Menu</span>
