@@ -824,12 +824,10 @@ const App: React.FC = () => {
       <Modal isOpen={showVideoModal} onClose={() => setShowVideoModal(false)} title="Arquitectura del Sistema" maxWidth="max-w-4xl">
          <div className="aspect-video bg-black rounded-lg overflow-hidden relative group">
             {/* Placeholder for Video - In a real app, embed YouTube/Vimeo here */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/50">
-               <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:scale-110 transition-transform cursor-pointer">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/50 group-hover:bg-slate-900/40 transition-colors">
+               <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:scale-110 transition-transform cursor-pointer shadow-2xl">
                   <Play size={40} fill="white" className="text-white ml-2" />
                </div>
-               <p className="text-white mt-4 font-medium">Ver Tour del Sistema</p>
-               <p className="text-slate-400 text-xs mt-2">(Placeholder: Aquí iría el embed de YouTube/Vimeo)</p>
             </div>
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" alt="Video Cover" className="w-full h-full object-cover opacity-50 -z-10" />
          </div>
