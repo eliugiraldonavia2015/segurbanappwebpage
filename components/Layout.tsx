@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '@/src/assets/images/nuevosegurbaniconwebnobk.png';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -106,7 +107,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
               <div className="flex items-center gap-2">
                  <div className="w-8 h-8 relative">
                     <img 
-                      src="/nuevosegurbaniconwebnobk.png" 
+                      src={logo}
                       alt="SegUrban Logo" 
                       className="w-full h-full object-contain"
                     />
