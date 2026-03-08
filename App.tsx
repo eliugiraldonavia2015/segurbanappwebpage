@@ -495,36 +495,54 @@ const App: React.FC = () => {
                 
                 <div className="flex w-max animate-scroll gap-16 items-center">
                     {[
-                       // Clientes Actuales
-                       { name: "ACEIS S.A.S." },
-                       { name: "Abelardo Yepes S.A.S." },
-                       { name: "3 Sesenta Consultores S.A.S." },
-                       { name: "Administración AM S.A.S." },
-                       { name: "Administraciones Inmobiliarias P.H." },
-                       { name: "Admin. y Asesorías Jurídicas" },
-                       { name: "Habitat Horizontal S.A.S." },
-                       { name: "Somos Administración en P.H." },
-                       { name: "Tu Administración y Abogados" },
-                       { name: "Bienes Raíces Chipre S.A.S." },
-                       { name: "GI-ABC S.A.S." },
-                       { name: "Grupo Emp. Activo Urbano" },
-                       { name: "Propiedades y Bienes El Diamante" },
-                       { name: "ARGI Inmobiliaria" },
-                       { name: "RedSocial en Propiedad Horizontal" },
-                       { name: "Multisoluciones" },
-                       { name: "Consorcio Inmobiliario Ades" },
-                       { name: "Total Management Group" },
+                       // Colombia
+                       { name: "Ciudad Jardín", country: "Colombia" },
+                       { name: "ACEIS S.A.S.", country: "Colombia" },
+                       { name: "Abelardo Yepes S.A.S.", country: "Colombia" },
+                       { name: "Constructora Meléndez", country: "Colombia" },
+                       { name: "Neivor", country: "Colombia" },
+                       // Perú
+                       { name: "Monterrico", country: "Perú" },
+                       { name: "Rinconada del Lago", country: "Perú" },
+                       { name: "Constructora Líder", country: "Perú" },
+                       { name: "San Isidro Golf", country: "Perú" },
+                       { name: "Chacarilla", country: "Perú" },
+                       // Bolivia
+                       { name: "Santa Cruz La Vieja", country: "Bolivia" },
+                       { name: "Ciudad El Triunfo", country: "Bolivia" },
+                       { name: "Condominio Montibello", country: "Bolivia" },
+                       { name: "Buen Vivir Urbanizaciones", country: "Bolivia" },
+                       { name: "Jardín Real", country: "Bolivia" },
+                       // Uruguay
+                       { name: "Altos de la Tahona", country: "Uruguay" },
+                       { name: "Lagos de Carrasco", country: "Uruguay" },
+                       { name: "Carmel", country: "Uruguay" },
+                       { name: "Pueblo Mío", country: "Uruguay" },
+                       { name: "Viñedos de la Tahona", country: "Uruguay" },
+                       // Chile
+                       { name: "ComunidadFeliz", country: "Chile" },
+                       { name: "Chicureo", country: "Chile" },
+                       { name: "Santa María de Manquehue", country: "Chile" },
+                       { name: "Inmobiliaria Almagro", country: "Chile" },
+                       { name: "Lo Barnechea", country: "Chile" },
+                       // Paraguay
+                       { name: "Condominio Aqua Village", country: "Paraguay" },
+                       { name: "Rakiura", country: "Paraguay" },
+                       { name: "Santa María de la Lomada", country: "Paraguay" },
+                       { name: "San Bernardino Country", country: "Paraguay" },
+                       { name: "Grupo Vierci", country: "Paraguay" },
                        // Repetición para efecto infinito (Seamless Loop)
-                       { name: "ACEIS S.A.S." },
-                       { name: "Abelardo Yepes S.A.S." },
-                       { name: "3 Sesenta Consultores S.A.S." },
-                       { name: "Administración AM S.A.S." },
-                       { name: "Administraciones Inmobiliarias P.H." },
-                       { name: "Admin. y Asesorías Jurídicas" },
+                       { name: "Ciudad Jardín", country: "Colombia" },
+                       { name: "ACEIS S.A.S.", country: "Colombia" },
+                       { name: "Abelardo Yepes S.A.S.", country: "Colombia" },
+                       { name: "Constructora Meléndez", country: "Colombia" },
+                       { name: "Neivor", country: "Colombia" },
+                       { name: "Monterrico", country: "Perú" },
                     ].map((client, idx) => (
                        <div key={idx} className="flex flex-col items-center justify-center opacity-60 hover:opacity-100 transition-opacity min-w-[200px]">
                           {/* Placeholder Logo - In production replace with img */}
                           <div className="text-lg font-bold text-slate-700 mb-1 whitespace-nowrap">{client.name}</div>
+                          <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{client.country}</div>
                        </div>
                     ))}
                  </div>
