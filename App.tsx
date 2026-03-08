@@ -174,13 +174,9 @@ const App: React.FC = () => {
       onOpenFeature={(id) => setActiveFeatureId(id)}
     >
       {/* Hero Section - Clean & Corporate */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-50">
+      <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="z-10">
-            <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-app-accent animate-pulse"></span>
-              <span className="text-xs font-semibold text-slate-600 tracking-wide uppercase">Líderes en Gestión de Comunidades</span>
-            </div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
               Seguridad y Gestión Integral para su <span className="text-app-accent">Urbanización</span>
@@ -272,8 +268,8 @@ const App: React.FC = () => {
       </section>
 
       {/* FEATURES GRID - Corporate & Organized */}
-      <section id="features" className="py-24 bg-white scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="features" className="min-h-screen flex flex-col justify-center py-24 bg-white scroll-mt-16">
+        <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="text-center max-w-3xl mx-auto mb-16">
              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Ecosistema Integral de Gestión
@@ -373,11 +369,11 @@ const App: React.FC = () => {
       </section>
 
       {/* STATS / BENEFITS - Clean Layout */}
-      <section id="benefits" className="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <section id="benefits" className="min-h-screen flex flex-col justify-center py-24 bg-slate-900 text-white relative overflow-hidden scroll-mt-16">
          {/* Background Pattern */}
          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
          
-         <div className="max-w-7xl mx-auto px-6 relative z-10">
+         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
              <div className="grid md:grid-cols-2 gap-16 items-center">
                  <div>
                      <h2 className="text-3xl md:text-4xl font-bold mb-6">Resultados Reales y Medibles</h2>
@@ -441,8 +437,8 @@ const App: React.FC = () => {
       </section>
 
       {/* TESTIMONIALS - Professional */}
-      <section id="testimonials" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="testimonials" className="min-h-screen flex flex-col justify-center py-24 bg-slate-50 scroll-mt-16">
+        <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Lo que dicen nuestros clientes</h2>
             <p className="text-slate-500">Testimonios de administradores y residentes satisfechos.</p>
@@ -491,8 +487,8 @@ const App: React.FC = () => {
       </section>
 
       {/* CTA SECTION - Clean */}
-      <section id="contact" className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
+      <section id="contact" className="min-h-screen flex flex-col justify-center py-24 bg-white scroll-mt-16">
+        <div className="max-w-5xl mx-auto px-6 w-full">
             <div className="bg-app-primary rounded-[2rem] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
                 {/* Background Pattern */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
