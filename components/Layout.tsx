@@ -42,9 +42,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
   };
 
   return (
-    <div className="min-h-screen bg-app-bg text-app-text font-sans selection:bg-app-primary selection:text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-app-bg text-app-text font-sans selection:bg-app-accent selection:text-white overflow-x-hidden">
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-app-bg/90 backdrop-blur-md border-b border-white/5 py-3' : 'bg-transparent py-5'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             {/* Logo Image Direct Render */}
@@ -55,8 +55,8 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="text-2xl font-bold tracking-tight text-white group-hover:opacity-90 transition-opacity">
-              SegUrban <span className="text-app-primary">System</span>
+            <span className={`text-2xl font-bold tracking-tight transition-colors ${isScrolled ? 'text-app-primary' : 'text-app-primary'}`}>
+              SegUrban <span className="text-app-accent">System</span>
             </span>
           </div>
 
@@ -67,27 +67,27 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
                 key={link.name} 
                 href={link.href} 
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-slate-300 hover:text-white transition-colors cursor-pointer"
+                className={`text-sm font-medium transition-colors cursor-pointer ${isScrolled ? 'text-slate-600 hover:text-app-accent' : 'text-slate-700 hover:text-app-accent'}`}
               >
                 {link.name}
               </a>
             ))}
             <button 
               onClick={onOpenLogin}
-              className="bg-white/5 hover:bg-white/10 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all border border-white/10 hover:border-white/20"
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all border ${isScrolled ? 'text-slate-700 border-slate-200 hover:bg-slate-50' : 'text-slate-700 border-slate-300 hover:bg-white/50'}`}
             >
               Acceso Clientes
             </button>
             <button 
               onClick={onOpenDemo}
-              className="bg-app-primary hover:bg-app-primaryHover text-slate-900 px-6 py-2 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] transition-all hover:-translate-y-0.5"
+              className="bg-app-primary hover:bg-app-primaryHover text-white px-6 py-2 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
             >
               Solicitar Demo
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white p-2" onClick={() => setMobileMenuOpen(true)}>
+          <button className={`md:hidden p-2 ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`} onClick={() => setMobileMenuOpen(true)}>
             <Menu size={28} />
           </button>
         </div>
@@ -100,7 +100,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 z-[60] bg-slate-950 md:hidden flex flex-col p-6"
+            className="fixed inset-0 z-[60] bg-white md:hidden flex flex-col p-6"
           >
             <div className="flex justify-between items-center mb-10">
               <div className="flex items-center gap-2">
@@ -113,9 +113,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
                       className="w-full h-full object-contain block"
                     />
                  </div>
-                 <span className="text-xl font-bold text-white">Menu</span>
+                 <span className="text-xl font-bold text-app-primary">Menu</span>
               </div>
-              <button onClick={() => setMobileMenuOpen(false)} className="bg-slate-900 p-2 rounded-full"><X className="text-white" size={24} /></button>
+              <button onClick={() => setMobileMenuOpen(false)} className="bg-slate-100 p-2 rounded-full"><X className="text-slate-900" size={24} /></button>
             </div>
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
@@ -123,21 +123,21 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
                   key={link.name} 
                   href={link.href} 
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-xl font-medium text-slate-300 hover:text-app-primary transition-colors cursor-pointer"
+                  className="text-xl font-medium text-slate-700 hover:text-app-accent transition-colors cursor-pointer"
                 >
                   {link.name}
                 </a>
               ))}
-              <hr className="border-slate-800 my-4" />
+              <hr className="border-slate-100 my-4" />
               <button 
                 onClick={() => { setMobileMenuOpen(false); onOpenLogin?.(); }}
-                className="bg-slate-800 text-white w-full py-4 rounded-xl font-semibold border border-slate-700"
+                className="bg-slate-100 text-slate-900 w-full py-4 rounded-xl font-semibold border border-slate-200"
               >
                 Acceso Clientes
               </button>
                <button 
                 onClick={() => { setMobileMenuOpen(false); onOpenDemo?.(); }}
-                className="bg-app-primary text-slate-900 w-full py-4 rounded-xl font-bold shadow-lg shadow-app-primary/20"
+                className="bg-app-primary text-white w-full py-4 rounded-xl font-bold shadow-lg shadow-app-primary/20"
               >
                 Solicitar Demo
               </button>
@@ -149,17 +149,14 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
       {children}
 
       {/* Footer */}
-      <footer className="bg-slate-950 py-16 border-t border-slate-900">
+      <footer className="bg-slate-900 py-16 border-t border-slate-800 text-slate-300">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-10 mb-16">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 relative flex items-center justify-center">
-                  <img 
-                    src="nuevosegurbaniconwebnobk.png" 
-                    alt="SegUrban Logo" 
-                    className="w-full h-full object-contain"
-                  />
+                  {/* Footer logo placeholder or keep existing */}
+                  <div className="w-full h-full bg-white/10 rounded-lg flex items-center justify-center text-white font-bold text-xs">SU</div>
                 </div>
                 <span className="text-2xl font-bold text-white">SegUrban System</span>
               </div>
@@ -168,7 +165,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
               </p>
               <div className="flex gap-4">
                 {[1, 2, 3].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-app-primary hover:border-app-primary hover:bg-slate-800 cursor-pointer transition-all duration-300">
+                  <div key={i} className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white hover:bg-slate-700 cursor-pointer transition-all duration-300">
                     <ArrowRight size={16} className="-rotate-45" />
                   </div>
                 ))}
@@ -177,27 +174,27 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
             <div>
               <h4 className="text-white font-bold mb-6 text-lg">Ecosistema</h4>
               <ul className="space-y-3 text-slate-400">
-                <li onClick={() => handleFooterLinkClick('access-control')} className="hover:text-app-primary cursor-pointer transition-colors flex items-center gap-2 group">
-                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-app-primary transition-colors"></span> Control de Accesos IA
+                <li onClick={() => handleFooterLinkClick('access-control')} className="hover:text-white cursor-pointer transition-colors flex items-center gap-2 group">
+                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-white transition-colors"></span> Control de Accesos IA
                 </li>
-                <li onClick={() => handleFooterLinkClick('finance-engine')} className="hover:text-app-primary cursor-pointer transition-colors flex items-center gap-2 group">
-                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-app-primary transition-colors"></span> Motor de Cobranzas
+                <li onClick={() => handleFooterLinkClick('finance-engine')} className="hover:text-white cursor-pointer transition-colors flex items-center gap-2 group">
+                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-white transition-colors"></span> Motor de Cobranzas
                 </li>
-                <li onClick={() => handleFooterLinkClick('digital-governance')} className="hover:text-app-primary cursor-pointer transition-colors flex items-center gap-2 group">
-                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-app-primary transition-colors"></span> Gobernanza Digital
+                <li onClick={() => handleFooterLinkClick('digital-governance')} className="hover:text-white cursor-pointer transition-colors flex items-center gap-2 group">
+                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-white transition-colors"></span> Gobernanza Digital
                 </li>
-                <li onClick={() => handleFooterLinkClick('security-terminal')} className="hover:text-app-primary cursor-pointer transition-colors flex items-center gap-2 group">
-                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-app-primary transition-colors"></span> Terminal de Seguridad
+                <li onClick={() => handleFooterLinkClick('security-terminal')} className="hover:text-white cursor-pointer transition-colors flex items-center gap-2 group">
+                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-white transition-colors"></span> Terminal de Seguridad
                 </li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold mb-6 text-lg">Empresa</h4>
               <ul className="space-y-3 text-slate-400">
-                <li onClick={() => handleFooterLinkClick('about-system')} className="hover:text-app-primary cursor-pointer transition-colors flex items-center gap-2 group">
-                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-app-primary transition-colors"></span> Sobre el Sistema
+                <li onClick={() => handleFooterLinkClick('about-system')} className="hover:text-white cursor-pointer transition-colors flex items-center gap-2 group">
+                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-white transition-colors"></span> Sobre el Sistema
                 </li>
-                <li onClick={() => handleFooterLinkClick('success-stories')} className="hover:text-app-primary cursor-pointer transition-colors flex items-center gap-2 group">
+                <li onClick={() => handleFooterLinkClick('success-stories')} className="hover:text-white cursor-pointer transition-colors flex items-center gap-2 group">
                    <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-app-primary transition-colors"></span> Casos de Éxito
                 </li>
                 <li onClick={() => handleFooterLinkClick('enterprise-support')} className="hover:text-app-primary cursor-pointer transition-colors flex items-center gap-2 group">

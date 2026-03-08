@@ -1,34 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --color-app-bg: #0f172a; /* Slate 900 */
-  --color-app-card: #1e293b; /* Slate 800 */
-  --color-app-primary: #06b6d4; /* Cyan 500 */
-  --color-app-primaryHover: #22d3ee; /* Cyan 400 */
-  --color-app-text: #f1f5f9; /* Slate 100 */
-  --color-app-muted: #94a3b8; /* Slate 400 */
-  --color-app-danger: #ef4444; /* Red 500 */
-  --color-app-success: #10b981; /* Emerald 500 */
-  --font-sans: 'Inter', sans-serif;
+  --color-app-bg: #f8fafc; /* Slate 50 - Fondo claro corporativo */
+  --color-app-card: #ffffff; /* Blanco puro */
+  --color-app-primary: #0f172a; /* Slate 900 - Azul marino profundo/Sobrio */
+  --color-app-primaryHover: #1e293b; /* Slate 800 */
+  --color-app-accent: #2563eb; /* Blue 600 - Acento corporativo */
+  --color-app-text: #334155; /* Slate 700 - Texto legible */
+  --color-app-heading: #0f172a; /* Slate 900 - Títulos oscuros */
+  --color-app-muted: #64748b; /* Slate 500 */
+  --color-app-border: #e2e8f0; /* Slate 200 */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
   body {
     @apply bg-app-bg text-app-text font-sans antialiased;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-app-heading font-semibold tracking-tight;
+  }
 }
 
-/* Custom scrollbar for webkit */
+/* Scrollbar sutil y profesional */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 3px;
+  background: #cbd5e1;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #94a3b8;
 }
