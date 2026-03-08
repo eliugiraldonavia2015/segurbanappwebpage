@@ -48,7 +48,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             {/* Logo Image Direct Render */}
-            <div className="w-12 h-12 relative flex items-center justify-center">
+            <div className="w-16 h-16 relative flex items-center justify-center">
               <img 
                 src="/nuevosegurbaniconwebnobk.png" 
                 alt="SegUrban Logo" 
@@ -104,12 +104,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
           >
             <div className="flex justify-between items-center mb-10">
               <div className="flex items-center gap-2">
-                 <div className="w-8 h-8 min-w-[2rem] min-h-[2rem] relative shrink-0">
+                 <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] relative shrink-0">
                     <img 
                       src="/nuevosegurbaniconwebnobk.png" 
                       alt="SegUrban Logo" 
-                      width="32"
-                      height="32"
+                      width="48"
+                      height="48"
                       className="w-full h-full object-contain block"
                     />
                  </div>
@@ -154,9 +154,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, onOpenLogin, onOpenDem
           <div className="grid md:grid-cols-4 gap-10 mb-16">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 relative flex items-center justify-center">
-                  {/* Footer logo placeholder or keep existing */}
-                  <div className="w-full h-full bg-white/10 rounded-lg flex items-center justify-center text-white font-bold text-xs">SU</div>
+                <div className="w-16 h-16 relative flex items-center justify-center shrink-0">
+                  <img 
+                    src="/nuevosegurbaniconwebnobk.png" 
+                    alt="SegUrban Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="text-2xl font-bold text-white">SegUrban System</span>
               </div>
