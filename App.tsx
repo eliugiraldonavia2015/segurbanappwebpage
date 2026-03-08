@@ -494,42 +494,40 @@ const App: React.FC = () => {
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
                 
                 <div className="flex w-max animate-scroll gap-16 items-center">
-                   {[
-                      // Argentina
-                      { name: "Nordelta", country: "Argentina" },
-                      { name: "Puerto Madero", country: "Argentina" },
-                      { name: "San Isidro", country: "Argentina" },
-                      // Colombia
-                      { name: "Rosales", country: "Colombia" },
-                      { name: "El Poblado", country: "Colombia" },
-                      { name: "Ruitoque", country: "Colombia" },
-                      // Peru
-                      { name: "Miraflores", country: "Perú" },
-                      { name: "La Molina", country: "Perú" },
-                      { name: "San Isidro", country: "Perú" },
-                      // Chile
-                      { name: "Las Condes", country: "Chile" },
-                      { name: "Vitacura", country: "Chile" },
-                      { name: "Lo Barnechea", country: "Chile" },
-                      // Bolivia
-                      { name: "Equipetrol", country: "Bolivia" },
-                      { name: "Calacoto", country: "Bolivia" },
-                      { name: "Urubó", country: "Bolivia" },
-                      // Repetición para efecto infinito (Seamless Loop)
-                      { name: "Nordelta", country: "Argentina" },
-                      { name: "Puerto Madero", country: "Argentina" },
-                      { name: "San Isidro", country: "Argentina" },
-                      { name: "Rosales", country: "Colombia" },
-                      { name: "El Poblado", country: "Colombia" },
-                      { name: "Ruitoque", country: "Colombia" },
-                   ].map((client, idx) => (
-                      <div key={idx} className="flex flex-col items-center justify-center opacity-50 hover:opacity-100 transition-opacity min-w-[150px]">
-                         {/* Placeholder Logo - In production replace with img */}
-                         <div className="text-xl font-bold text-slate-800 mb-1 whitespace-nowrap">{client.name}</div>
-                         <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{client.country}</div>
-                      </div>
-                   ))}
-                </div>
+                    {[
+                       // Clientes Actuales
+                       { name: "ACEIS S.A.S." },
+                       { name: "Abelardo Yepes S.A.S." },
+                       { name: "3 Sesenta Consultores S.A.S." },
+                       { name: "Administración AM S.A.S." },
+                       { name: "Administraciones Inmobiliarias P.H." },
+                       { name: "Admin. y Asesorías Jurídicas" },
+                       { name: "Habitat Horizontal S.A.S." },
+                       { name: "Somos Administración en P.H." },
+                       { name: "Tu Administración y Abogados" },
+                       { name: "Bienes Raíces Chipre S.A.S." },
+                       { name: "GI-ABC S.A.S." },
+                       { name: "Grupo Emp. Activo Urbano" },
+                       { name: "Propiedades y Bienes El Diamante" },
+                       { name: "ARGI Inmobiliaria" },
+                       { name: "RedSocial en Propiedad Horizontal" },
+                       { name: "Multisoluciones" },
+                       { name: "Consorcio Inmobiliario Ades" },
+                       { name: "Total Management Group" },
+                       // Repetición para efecto infinito (Seamless Loop)
+                       { name: "ACEIS S.A.S." },
+                       { name: "Abelardo Yepes S.A.S." },
+                       { name: "3 Sesenta Consultores S.A.S." },
+                       { name: "Administración AM S.A.S." },
+                       { name: "Administraciones Inmobiliarias P.H." },
+                       { name: "Admin. y Asesorías Jurídicas" },
+                    ].map((client, idx) => (
+                       <div key={idx} className="flex flex-col items-center justify-center opacity-60 hover:opacity-100 transition-opacity min-w-[200px]">
+                          {/* Placeholder Logo - In production replace with img */}
+                          <div className="text-lg font-bold text-slate-700 mb-1 whitespace-nowrap">{client.name}</div>
+                       </div>
+                    ))}
+                 </div>
              </div>
           </div>
         </div>
