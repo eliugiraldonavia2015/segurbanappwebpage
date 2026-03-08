@@ -483,6 +483,55 @@ const App: React.FC = () => {
               </div>
             ))}
           </div>
+
+          {/* Carrusel Infinito de Clientes */}
+          <div className="mt-24 pt-16 border-t border-slate-200">
+             <p className="text-center text-slate-400 text-sm font-bold uppercase tracking-widest mb-10">Confían en SegUrban</p>
+             
+             <div className="relative overflow-hidden w-full">
+                {/* Degradados laterales para efecto 'fade' */}
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
+                
+                <div className="flex w-max animate-scroll gap-16 items-center">
+                   {[
+                      // Argentina
+                      { name: "Nordelta", country: "Argentina" },
+                      { name: "Puerto Madero", country: "Argentina" },
+                      { name: "San Isidro", country: "Argentina" },
+                      // Colombia
+                      { name: "Rosales", country: "Colombia" },
+                      { name: "El Poblado", country: "Colombia" },
+                      { name: "Ruitoque", country: "Colombia" },
+                      // Peru
+                      { name: "Miraflores", country: "Perú" },
+                      { name: "La Molina", country: "Perú" },
+                      { name: "San Isidro", country: "Perú" },
+                      // Chile
+                      { name: "Las Condes", country: "Chile" },
+                      { name: "Vitacura", country: "Chile" },
+                      { name: "Lo Barnechea", country: "Chile" },
+                      // Bolivia
+                      { name: "Equipetrol", country: "Bolivia" },
+                      { name: "Calacoto", country: "Bolivia" },
+                      { name: "Urubó", country: "Bolivia" },
+                      // Repetición para efecto infinito (Seamless Loop)
+                      { name: "Nordelta", country: "Argentina" },
+                      { name: "Puerto Madero", country: "Argentina" },
+                      { name: "San Isidro", country: "Argentina" },
+                      { name: "Rosales", country: "Colombia" },
+                      { name: "El Poblado", country: "Colombia" },
+                      { name: "Ruitoque", country: "Colombia" },
+                   ].map((client, idx) => (
+                      <div key={idx} className="flex flex-col items-center justify-center opacity-50 hover:opacity-100 transition-opacity min-w-[150px]">
+                         {/* Placeholder Logo - In production replace with img */}
+                         <div className="text-xl font-bold text-slate-800 mb-1 whitespace-nowrap">{client.name}</div>
+                         <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{client.country}</div>
+                      </div>
+                   ))}
+                </div>
+             </div>
+          </div>
         </div>
       </section>
 
