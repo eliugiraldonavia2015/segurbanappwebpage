@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Shield, Smartphone, Users, BarChart3, Cloud, 
-  Lock, Zap, Globe, Cpu, Radio, CheckCircle2, ArrowRight 
+  Lock, CheckCircle2, ArrowRight, Zap, Radio
 } from 'lucide-react';
 
 interface CapabilitiesSectionProps {
@@ -11,17 +11,15 @@ interface CapabilitiesSectionProps {
 
 export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpenDemo }) => {
   return (
-    <section id="benefits" className="py-24 bg-slate-900 relative overflow-hidden">
-      {/* Background Elements */}
+    <section id="benefits" className="py-20 bg-slate-900 relative overflow-hidden">
+      {/* Background Elements - Simplified */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-black opacity-80"></div>
-      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       
-      {/* Glowing Orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Glowing Orbs - Reduced size for better performance and less distraction */}
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,178 +27,156 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block py-1 px-3 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4">
-              Arquitectura Enterprise
+              Solución Integral
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-              Capacidades <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Sin Límites</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              Todo lo que necesita para <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Operar con Excelencia</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              Diseñado para escalar. SegUrban integra tecnologías de vanguardia para ofrecer una experiencia de gestión robusta, segura y completamente automatizada.
+              Elimine la complejidad. Una sola plataforma que unifica seguridad, finanzas y comunidad para que usted tenga el control total.
             </p>
           </motion.div>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(180px,auto)]">
+        {/* Compact Grid Layout - 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Card 1: Security Core (Large) */}
+          {/* Card 1: Security - High Priority */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="md:col-span-8 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-blue-500/30 transition-all group overflow-hidden relative"
+            className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-blue-500/30 transition-all group flex flex-col"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-              <Shield size={120} />
+            <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+              <Shield size={24} />
             </div>
-            <div className="relative z-10">
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
-                <Shield size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Seguridad Perimetral Inteligente</h3>
-              <p className="text-slate-400 mb-6 max-w-lg">
-                Control de accesos con validación biométrica y lectura de placas vehiculares en tiempo real. 
-                Registro inmutable de cada ingreso y salida sincronizado con la nube.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <div className="flex items-center gap-2 text-sm text-slate-300">
-                  <CheckCircle2 size={16} className="text-blue-500" /> <span>Reconocimiento Facial</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-slate-300">
-                  <CheckCircle2 size={16} className="text-blue-500" /> <span>Lectura de Placas LPR</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-slate-300">
-                  <CheckCircle2 size={16} className="text-blue-500" /> <span>Códigos QR Dinámicos</span>
-                </div>
-              </div>
-            </div>
+            <h3 className="text-xl font-bold text-white mb-2">Seguridad 24/7</h3>
+            <p className="text-slate-400 mb-6 text-sm flex-grow">
+              Proteja su comunidad sin descanso. Control de accesos biométrico y registro automático de visitas y vehículos.
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-blue-500 shrink-0" /> <span>Reconocimiento Facial</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-blue-500 shrink-0" /> <span>Lectura de Placas</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-blue-500 shrink-0" /> <span>Códigos QR para Visitas</span>
+              </li>
+            </ul>
           </motion.div>
 
-          {/* Card 2: Cloud Infrastructure (Tall) */}
+          {/* Card 2: Finance - High Value */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:col-span-4 md:row-span-2 bg-gradient-to-br from-indigo-900/40 to-slate-900/40 backdrop-blur-sm border border-indigo-500/20 rounded-3xl p-8 hover:border-indigo-500/40 transition-all group relative overflow-hidden"
+            className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all group flex flex-col"
           >
-            <div className="absolute inset-0 bg-indigo-500/5 group-hover:bg-indigo-500/10 transition-colors"></div>
-            <div className="relative z-10 h-full flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
-                <Cloud size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Infraestructura Cloud</h3>
-              <p className="text-slate-400 mb-8 flex-grow">
-                Arquitectura serverless de alta disponibilidad. Sus datos están replicados globalmente y protegidos con encriptación de grado bancario.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 flex items-center justify-between">
-                  <span className="text-sm text-slate-300">Uptime SLA</span>
-                  <span className="text-emerald-400 font-bold font-mono">99.99%</span>
-                </div>
-                <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 flex items-center justify-between">
-                  <span className="text-sm text-slate-300">Backup</span>
-                  <span className="text-blue-400 font-bold font-mono">Tiempo Real</span>
-                </div>
-                <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 flex items-center justify-between">
-                  <span className="text-sm text-slate-300">Latencia</span>
-                  <span className="text-purple-400 font-bold font-mono">&lt; 50ms</span>
-                </div>
-              </div>
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+              <BarChart3 size={24} />
             </div>
+            <h3 className="text-xl font-bold text-white mb-2">Finanzas Sanas</h3>
+            <p className="text-slate-400 mb-6 text-sm flex-grow">
+              Automatice la cobranza y recupere cartera vencida. Conciliación bancaria inteligente que ahorra horas de trabajo.
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0" /> <span>Cobranza Automática</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0" /> <span>Recibos Digitales</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-emerald-500 shrink-0" /> <span>Reportes en Tiempo Real</span>
+              </li>
+            </ul>
           </motion.div>
 
-          {/* Card 3: Finance Engine (Medium) */}
+          {/* Card 3: Community & App - Engagement */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="md:col-span-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-emerald-500/30 transition-all group"
+            className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-purple-500/30 transition-all group flex flex-col"
           >
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
-              <BarChart3 size={24} />
+            <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 mb-4 group-hover:scale-110 transition-transform">
+              <Smartphone size={24} />
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Motor Financiero</h3>
-            <p className="text-slate-400 text-sm">
-              Conciliación bancaria automática y detección inteligente de pagos. Reduzca la morosidad hasta un 40%.
+            <h3 className="text-xl font-bold text-white mb-2">Vida en Comunidad</h3>
+            <p className="text-slate-400 mb-6 text-sm flex-grow">
+              Mejore la experiencia del residente. Una App intuitiva para reservas, votaciones y comunicación directa.
             </p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-purple-500 shrink-0" /> <span>App iOS y Android</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-purple-500 shrink-0" /> <span>Reserva de Amenities</span>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-slate-300">
+                <CheckCircle2 size={16} className="text-purple-500 shrink-0" /> <span>Votaciones Digitales</span>
+              </li>
+            </ul>
           </motion.div>
 
-          {/* Card 4: Mobile App (Medium) */}
+          {/* Card 4: Hardware & Cloud - Trust Factor (Spans full width on mobile, 3 cols on md) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="md:col-span-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-purple-500/30 transition-all group"
+            className="md:col-span-3 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700/50 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-indigo-500/30 transition-all"
           >
-            <div className="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-400 mb-6">
-              <Smartphone size={24} />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-3">App Residente</h3>
-            <p className="text-slate-400 text-sm">
-              Todo en la palma de la mano: Pagos, reservas, invitaciones y votaciones. Disponible en iOS y Android.
-            </p>
-          </motion.div>
-
-          {/* Card 5: IoT & Hardware (Wide) */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="md:col-span-12 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 md:p-12 hover:border-slate-600 transition-all flex flex-col md:flex-row items-center justify-between gap-8"
-          >
-             <div className="max-w-2xl">
-                <div className="flex items-center gap-3 mb-4">
-                  <Cpu className="text-amber-400" size={24} />
-                  <span className="text-amber-400 font-bold uppercase tracking-wider text-sm">Hardware Agnostic</span>
+             <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 hidden md:flex">
+                  <Cloud size={24} />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-4">Integración Universal IoT</h3>
-                <p className="text-slate-400 text-lg">
-                  Compatible con el 95% de los dispositivos de seguridad del mercado. 
-                  Cámaras IP, barreras vehiculares, sensores biométricos y controles de acceso existentes.
-                  No necesita reemplazar su infraestructura actual.
-                </p>
+                <div>
+                   <h3 className="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                     <Cloud size={20} className="md:hidden text-indigo-400" />
+                     Infraestructura Cloud & Compatible
+                   </h3>
+                   <p className="text-slate-400 text-sm max-w-2xl">
+                     Acceda desde cualquier lugar con seguridad bancaria. 
+                     <span className="text-indigo-300 font-medium"> Compatible con sus cámaras y barreras actuales</span>, sin costosos reemplazos de hardware.
+                   </p>
+                </div>
              </div>
              
-             <div className="flex gap-4 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                {/* Tech Logos Placeholders */}
-                <div className="flex flex-col items-center gap-2">
-                   <div className="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center">
-                      <Radio size={24} className="text-white" />
-                   </div>
-                   <span className="text-xs text-slate-500 font-mono">RFID</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                   <div className="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center">
-                      <Zap size={24} className="text-white" />
-                   </div>
-                   <span className="text-xs text-slate-500 font-mono">Z-WAVE</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                   <div className="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center">
-                      <Globe size={24} className="text-white" />
-                   </div>
-                   <span className="text-xs text-slate-500 font-mono">IP</span>
-                </div>
+             <div className="flex items-center gap-4 border-t md:border-t-0 md:border-l border-slate-700 pt-4 md:pt-0 md:pl-6 w-full md:w-auto justify-between md:justify-start">
+                 <div className="text-center">
+                    <div className="text-emerald-400 font-bold font-mono text-lg">99.9%</div>
+                    <div className="text-[10px] text-slate-500 uppercase font-bold">Uptime</div>
+                 </div>
+                 <div className="text-center">
+                    <div className="text-blue-400 font-bold font-mono text-lg">24/7</div>
+                    <div className="text-[10px] text-slate-500 uppercase font-bold">Soporte</div>
+                 </div>
+                 <div className="text-center">
+                    <div className="text-purple-400 font-bold font-mono text-lg">SSL</div>
+                    <div className="text-[10px] text-slate-500 uppercase font-bold">Seguro</div>
+                 </div>
              </div>
           </motion.div>
 
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
             <button 
                 onClick={onOpenDemo}
-                className="bg-white text-slate-900 font-bold py-4 px-10 rounded-xl hover:bg-app-accent hover:text-white transition-all shadow-lg hover:shadow-app-accent/20 flex items-center justify-center gap-2 mx-auto text-lg"
+                className="bg-white text-slate-900 font-bold py-4 px-10 rounded-xl hover:bg-app-accent hover:text-white transition-all shadow-lg hover:shadow-app-accent/20 flex items-center justify-center gap-2 mx-auto text-lg group"
             >
-                Solicitar Demostración Completa <ArrowRight size={20} />
+                Solicitar Demostración <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <p className="text-slate-500 mt-4 text-sm">
-                * Algunas capacidades requieren hardware compatible. Consulte con nuestro equipo técnico.
+            <p className="text-slate-500 mt-4 text-xs">
+               Implementación rápida en menos de 48 horas para comunidades estándar.
             </p>
         </div>
       </div>
