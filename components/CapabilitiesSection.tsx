@@ -109,14 +109,14 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
       image: (
         <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-800">
           <Carousel images={[
+            '/screenshots/admin-home.jpeg',
+            '/screenshots/whatsapp-5.jpeg',
             '/screenshots/admin-residentes.jpeg',
             '/screenshots/admin-personal.jpeg',
-            '/screenshots/admin-home.jpeg',
             '/screenshots/whatsapp-1.jpeg',
             '/screenshots/whatsapp-2.jpeg',
             '/screenshots/whatsapp-3.jpeg',
             '/screenshots/whatsapp-4.jpeg',
-            '/screenshots/whatsapp-5.jpeg',
             '/screenshots/whatsapp-6.jpeg',
             '/screenshots/whatsapp-7.jpeg',
           ]} />
