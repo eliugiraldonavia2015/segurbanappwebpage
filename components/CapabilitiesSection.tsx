@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Shield, Smartphone, Users, BarChart3, Cloud, 
   CheckCircle2, ArrowRight, Scan, CreditCard, Bell, 
-  Search, FileText, UserCheck, Key, Package, AlertTriangle, Video, Map
+  Search, FileText, UserCheck, Key, Package, AlertTriangle, Video, Map, ChevronLeft, ChevronRight
 } from 'lucide-react';
 
 interface CapabilitiesSectionProps {
@@ -11,6 +11,61 @@ interface CapabilitiesSectionProps {
 }
 
 type TabType = 'admin' | 'resident' | 'guard';
+
+const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="relative w-full h-full rounded-2xl overflow-hidden group">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`Slide ${currentIndex + 1}`}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.3 }}
+          className="w-full h-full object-contain bg-slate-800"
+        />
+      </AnimatePresence>
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+
+      {/* Controls */}
+      <button 
+        onClick={prevSlide}
+        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 text-white hover:bg-black/50 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+      >
+        <ChevronLeft size={20} />
+      </button>
+      <button 
+        onClick={nextSlide}
+        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 text-white hover:bg-black/50 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+      >
+        <ChevronRight size={20} />
+      </button>
+
+      {/* Indicators */}
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+        {images.map((_, idx) => (
+          <div 
+            key={idx} 
+            className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'bg-white w-4' : 'bg-white/50'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpenDemo }) => {
   const [activeTab, setActiveTab] = useState<TabType>('admin');
@@ -35,28 +90,12 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
         { icon: Bell, text: 'Envío de comunicados Push masivos' },
       ],
       image: (
-        <div className="relative w-full h-full bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col">
-          <div className="bg-slate-900 p-4 border-b border-slate-700 flex items-center justify-between">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div className="text-xs text-slate-500 font-mono">admin.segurban.com</div>
-          </div>
-          <div className="p-6 grid grid-cols-2 gap-4">
-             <div className="bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20">
-                <div className="text-emerald-400 text-xs uppercase font-bold mb-1">Recaudación Hoy</div>
-                <div className="text-2xl font-bold text-white">$4,250.00</div>
-             </div>
-             <div className="bg-blue-500/10 p-4 rounded-xl border border-blue-500/20">
-                <div className="text-blue-400 text-xs uppercase font-bold mb-1">Accesos Activos</div>
-                <div className="text-2xl font-bold text-white">124</div>
-             </div>
-             <div className="col-span-2 bg-slate-700/50 rounded-xl p-4 h-32 flex items-center justify-center text-slate-500 text-sm">
-                [Gráfico de Ingresos vs Gastos]
-             </div>
-          </div>
+        <div className="w-full h-full shadow-2xl rounded-2xl overflow-hidden border border-slate-700 bg-slate-800">
+          <Carousel images={[
+            '/screenshots/admin-residentes.jpeg',
+            '/screenshots/admin-personal.jpeg',
+            '/screenshots/admin-home.jpeg'
+          ]} />
         </div>
       )
     },
