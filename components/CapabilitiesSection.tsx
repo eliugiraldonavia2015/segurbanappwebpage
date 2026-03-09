@@ -39,18 +39,20 @@ const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={currentIndex}
-          src={images[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.5 }}
-          className="w-full h-full object-contain bg-slate-900"
-        />
-      </AnimatePresence>
+      <div className="absolute inset-0 bg-slate-900">
+        <AnimatePresence initial={false} custom={currentIndex}>
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+        </AnimatePresence>
+      </div>
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
 
@@ -105,7 +107,7 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
         { icon: Bell, text: 'Envío de comunicados Push masivos' },
       ],
       image: (
-        <div className="w-full h-full shadow-2xl rounded-2xl overflow-hidden border border-slate-700 bg-slate-800">
+        <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-800">
           <Carousel images={[
             '/screenshots/admin-residentes.jpeg',
             '/screenshots/admin-personal.jpeg',
@@ -291,8 +293,8 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
               </div>
 
               {/* Right: Visual Representation */}
-              <div className="order-1 md:order-2 h-[250px] md:h-[400px] flex items-center justify-center relative">
-                 <div className="relative z-10 w-full max-w-sm h-full max-h-[350px]">
+              <div className="order-1 md:order-2 h-[300px] md:h-[500px] flex items-center justify-center relative">
+                 <div className="relative z-10 w-full h-full">
                     {content[activeTab].image}
                  </div>
               </div>
