@@ -107,19 +107,28 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
         { icon: Bell, text: 'Envío de comunicados Push masivos' },
       ],
       image: (
-        <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-800">
-          <Carousel images={[
-            '/screenshots/admin-home.jpeg',
-            '/screenshots/whatsapp-5.jpeg',
-            '/screenshots/admin-residentes.jpeg',
-            '/screenshots/admin-personal.jpeg',
-            '/screenshots/whatsapp-1.jpeg',
-            '/screenshots/whatsapp-2.jpeg',
-            '/screenshots/whatsapp-3.jpeg',
-            '/screenshots/whatsapp-4.jpeg',
-            '/screenshots/whatsapp-6.jpeg',
-            '/screenshots/whatsapp-7.jpeg',
-          ]} />
+        <div className="relative w-full h-full bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col">
+          <div className="bg-slate-900 p-4 border-b border-slate-700 flex items-center justify-between">
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div className="text-xs text-slate-500 font-mono">admin.segurban.com</div>
+          </div>
+          <div className="p-6 grid grid-cols-2 gap-4">
+             <div className="bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20">
+                <div className="text-emerald-400 text-xs uppercase font-bold mb-1">Recaudación Hoy</div>
+                <div className="text-2xl font-bold text-white">$4,250.00</div>
+             </div>
+             <div className="bg-blue-500/10 p-4 rounded-xl border border-blue-500/20">
+                <div className="text-blue-400 text-xs uppercase font-bold mb-1">Accesos Activos</div>
+                <div className="text-2xl font-bold text-white">124</div>
+             </div>
+             <div className="col-span-2 bg-slate-700/50 rounded-xl p-4 h-32 flex items-center justify-center text-slate-500 text-sm">
+                [Gráfico de Ingresos vs Gastos]
+             </div>
+          </div>
         </div>
       )
     },
@@ -136,16 +145,33 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
         { icon: Package, text: 'Gestión de visitas y paquetería' },
       ],
       image: (
-        <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-800">
-          <Carousel images={[
-            '/screenshots/resident-1.jpeg',
-            '/screenshots/resident-2.jpeg',
-            '/screenshots/resident-3.jpeg',
-            '/screenshots/resident-4.jpeg',
-            '/screenshots/resident-5.jpeg',
-            '/screenshots/resident-6.jpeg',
-            '/screenshots/resident-7.jpeg',
-          ]} />
+        <div className="relative w-full h-full flex items-center justify-center">
+            <div className="w-64 h-[500px] bg-slate-900 rounded-[3rem] border-8 border-slate-800 shadow-2xl relative overflow-hidden">
+               <div className="absolute top-0 left-0 right-0 h-6 bg-slate-800 z-20 flex justify-center">
+                  <div className="w-20 h-4 bg-black rounded-b-xl"></div>
+               </div>
+               <div className="p-6 pt-12 h-full bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+                  <div className="flex justify-between items-center mb-8">
+                     <div className="text-lg font-bold">Hola, Carlos</div>
+                     <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                     <div className="bg-blue-600 p-4 rounded-2xl flex flex-col items-center gap-2 aspect-square justify-center">
+                        <Key size={24} />
+                        <span className="text-xs">Accesos</span>
+                     </div>
+                     <div className="bg-slate-700 p-4 rounded-2xl flex flex-col items-center gap-2 aspect-square justify-center">
+                        <CreditCard size={24} />
+                        <span className="text-xs">Pagos</span>
+                     </div>
+                  </div>
+                  <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                     <div className="text-xs text-slate-400 mb-1">Próxima Visita</div>
+                     <div className="font-bold">Familia Pérez</div>
+                     <div className="text-xs text-green-400">Acceso Autorizado</div>
+                  </div>
+               </div>
+            </div>
         </div>
       )
     },
