@@ -138,13 +138,13 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
       image: (
         <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-800">
           <Carousel images={[
-            '/screenshots/whatsapp-1.jpeg',
-            '/screenshots/whatsapp-2.jpeg',
-            '/screenshots/whatsapp-3.jpeg',
-            '/screenshots/whatsapp-4.jpeg',
-            '/screenshots/whatsapp-5.jpeg',
-            '/screenshots/whatsapp-6.jpeg',
-            '/screenshots/whatsapp-7.jpeg',
+            '/screenshots/resident-1.jpeg',
+            '/screenshots/resident-2.jpeg',
+            '/screenshots/resident-3.jpeg',
+            '/screenshots/resident-4.jpeg',
+            '/screenshots/resident-5.jpeg',
+            '/screenshots/resident-6.jpeg',
+            '/screenshots/resident-7.jpeg',
           ]} />
         </div>
       )
@@ -162,16 +162,30 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
         { icon: Shield, text: 'Control de rondas y novedades' },
       ],
       image: (
-        <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-800">
-          <Carousel images={[
-            '/screenshots/whatsapp-1.jpeg',
-            '/screenshots/whatsapp-2.jpeg',
-            '/screenshots/whatsapp-3.jpeg',
-            '/screenshots/whatsapp-4.jpeg',
-            '/screenshots/whatsapp-5.jpeg',
-            '/screenshots/whatsapp-6.jpeg',
-            '/screenshots/whatsapp-7.jpeg',
-          ]} />
+        <div className="relative w-full h-full bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex flex-col">
+          <div className="bg-slate-900 p-3 border-b border-slate-700 flex justify-center">
+            <div className="w-32 h-1 bg-slate-700 rounded-full"></div>
+          </div>
+          <div className="p-6 flex flex-col h-full relative">
+             <div className="absolute top-4 right-4 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+             <div className="text-sm text-slate-400 uppercase font-bold mb-4">Terminal de Garita</div>
+             
+             <div className="bg-slate-700/50 p-4 rounded-xl border border-slate-600 mb-4 flex items-center gap-4">
+                <div className="w-16 h-16 bg-slate-600 rounded-lg flex items-center justify-center">
+                   <Video size={24} className="text-slate-400" />
+                </div>
+                <div>
+                   <div className="text-lg font-bold text-white">GTR-4582</div>
+                   <div className="text-sm text-green-400">Residente Autorizado</div>
+                   <div className="text-xs text-slate-400">Villa 45 - Familia López</div>
+                </div>
+             </div>
+
+             <div className="grid grid-cols-2 gap-3">
+                <div className="bg-indigo-600 text-white p-3 rounded-lg text-center font-bold text-sm">Abrir Barrera</div>
+                <div className="bg-slate-700 text-white p-3 rounded-lg text-center font-bold text-sm">Denegar</div>
+             </div>
+          </div>
         </div>
       )
     }
