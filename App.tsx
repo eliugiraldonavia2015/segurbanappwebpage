@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Card } from './components/ui/Card';
 import { Modal } from './components/ui/Modal';
+import { CapabilitiesSection } from './components/CapabilitiesSection';
 
 // Datos de Características - Lenguaje Corporativo y Beneficios
 const featureDetails: Record<string, FeatureData> = {
@@ -461,73 +462,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* STATS / BENEFITS - Clean Layout */}
-      <section id="benefits" className="min-h-screen flex flex-col justify-center py-24 bg-slate-900 text-white relative overflow-hidden scroll-mt-16">
-         {/* Background Pattern */}
-         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-         
-         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-             <div className="grid md:grid-cols-2 gap-16 items-center">
-                 <div>
-                     <h2 className="text-3xl md:text-4xl font-bold mb-6">Resultados Reales y Medibles</h2>
-                     <p className="text-slate-400 text-lg mb-8">
-                         Nuestro enfoque está en generar valor tangible para su comunidad desde el primer día de implementación.
-                     </p>
-                     
-                     <div className="space-y-6">
-                         <div className="flex gap-4">
-                             <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
-                                 <BarChart3 size={24} />
-                             </div>
-                             <div>
-                                 <h4 className="text-xl font-bold mb-1">Reducción de Morosidad</h4>
-                                 <p className="text-slate-400 text-sm">Automatización de recordatorios y facilidad de pago que incrementa la recaudación hasta un 35%.</p>
-                             </div>
-                         </div>
-                         <div className="flex gap-4">
-                             <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
-                                 <Shield size={24} />
-                             </div>
-                             <div>
-                                 <h4 className="text-xl font-bold mb-1">Seguridad Proactiva</h4>
-                                 <p className="text-slate-400 text-sm">Detecte amenazas antes de que ocurran con alertas en tiempo real y control estricto de accesos.</p>
-                             </div>
-                         </div>
-                         <div className="flex gap-4">
-                             <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0">
-                                 <Award size={24} />
-                             </div>
-                             <div>
-                                 <h4 className="text-xl font-bold mb-1">Plusvalía</h4>
-                                 <p className="text-slate-400 text-sm">Una comunidad segura y bien administrada incrementa el valor de las propiedades.</p>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 
-                 <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl">
-                     <div className="grid grid-cols-2 gap-8">
-                         <div className="text-center p-4 border-r border-b border-slate-700">
-                             <div className="text-4xl font-bold text-white mb-2">99%</div>
-                             <div className="text-xs text-slate-400 uppercase tracking-wider">Uptime Garantizado</div>
-                         </div>
-                         <div className="text-center p-4 border-b border-slate-700">
-                             <div className="text-4xl font-bold text-white mb-2">-40%</div>
-                             <div className="text-xs text-slate-400 uppercase tracking-wider">Carga Administrativa</div>
-                         </div>
-                         <div className="text-center p-4 border-r border-slate-700">
-                             <div className="text-4xl font-bold text-white mb-2">24/7</div>
-                             <div className="text-xs text-slate-400 uppercase tracking-wider">Soporte Técnico</div>
-                         </div>
-                         <div className="text-center p-4">
-                             <div className="text-4xl font-bold text-white mb-2">150+</div>
-                             <div className="text-xs text-slate-400 uppercase tracking-wider">Comunidades</div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-      </section>
+      <CapabilitiesSection onOpenDemo={() => setShowDemoModal(true)} />
 
       {/* TESTIMONIALS - Professional */}
       <section id="testimonials" className="min-h-screen flex flex-col justify-center py-24 bg-slate-50 scroll-mt-16">
